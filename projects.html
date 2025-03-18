@@ -56,6 +56,8 @@
             opacity: 0;
             animation: fadeIn 0.5s ease-out forwards;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project:nth-child(odd) {
@@ -64,6 +66,29 @@
 
         .project:nth-child(even) {
             margin-left: auto;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .project a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .project-wrapper {
+            position: relative;
+        }
+
+        .project-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
 
         .project h2 {
@@ -81,11 +106,10 @@
             width: 100%;
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
         }
 
         .project img:hover {
-            transform: scale(1.02);
+            transform: none;
         }
 
         .project-content {
@@ -195,6 +219,39 @@
                 font-size: 1em;
             }
         }
+
+        /* Add these styles before the @keyframes fadeIn */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .modal-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90vh;
+            z-index: 1001;
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
     </style>
 </head>
 <body>
@@ -202,13 +259,14 @@
         <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="coming-soon.html">ABOUT ME</a></li>
-            <li><a href="coming-soon.html">CONTACT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
             <li><a href="projects.html">PROJECTS</a></li>
         </ul>
     </nav>
 
     <div class="projects-container">
         <div class="project">
+            <a href="mariana.html" class="project-link"></a>
             <h2>Mariana</h2>
             <p class="subtitle">2025 FRC Robot - Team 6995</p>
             <div class="project-content">
@@ -227,6 +285,7 @@
             </div>
         </div>
         <div class="project">
+            <a href="differential-wrist.html" class="project-link"></a>
             <h2>Differential Wrist Build</h2>
             <div class="project-content">
                 <div class="project-images">
@@ -244,5 +303,28 @@
             </div>
         </div>
     </div>
+
+    <div class="modal-overlay" id="imageModal">
+        <img class="modal-image" id="modalImage">
+    </div>
+
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        
+        // Get all project images
+        document.querySelectorAll('.project-images img').forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+            });
+        });
+
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    </script>
 </body>
 </html> 
