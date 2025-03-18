@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differential Wrist Build | Stirling Engineering</title>
+    <style>
+        body {
+            background-color: #00687b;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .nav {
+            width: 100%;
+            padding: 15px 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) translateX(-5px);
+        }
+
+        .back-button::before {
+            content: '←';
+            font-size: 1.2em;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .project-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .project-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-images img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .project-images img:hover {
+            transform: scale(1.02);
+        }
+
+        .project-text {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 900px) {
+            .project-details {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .back-button {
+                position: static;
+                transform: none;
+                margin-bottom: 20px;
+                display: inline-flex;
+            }
+
+            .project-header {
+                text-align: center;
+                padding-top: 20px;
+            }
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .modal-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90vh;
+            z-index: 1001;
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="coming-soon.html">ABOUT ME</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-content">
+        <div class="project-header">
+            <a href="projects.html" class="back-button">Back to Projects</a>
+            <h1>Differential Wrist Build</h1>
+            <div class="subtitle">Advanced Robotics Mechanism</div>
+        </div>
+        
+        <div class="project-details">
+            <div class="project-images">
+                <img src="wrist-main.png" alt="Differential Wrist - Main View" onerror="this.src='https://via.placeholder.com/800x600?text=Wrist+Image'">
+                <img src="wrist-mechanism.png" alt="Differential Wrist - Mechanism Detail" onerror="this.src='https://via.placeholder.com/800x600?text=Mechanism+Detail'">
+            </div>
+            <div class="project-text">
+                <p>A sophisticated mechanical engineering project focusing on the development of a differential wrist mechanism. This innovative system represents a breakthrough in robotic joint design, offering unprecedented precision and control in multi-axis movements.</p>
+                
+                <p>Key features include:</p>
+                <ul>
+                    <li>Dual-axis rotation capabilities</li>
+                    <li>Precision control mechanism</li>
+                    <li>Custom-designed gearing system</li>
+                    <li>Optimized weight-to-strength ratio</li>
+                </ul>
+
+                <div class="tech-stack">
+                    <h3>Technical Specifications:</h3>
+                    <ul>
+                        <li>Custom Gearing Design</li>
+                        <li>Precision Bearings</li>
+                        <li>Lightweight Materials</li>
+                        <li>Advanced Motion Control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="imageModal">
+        <img class="modal-image" id="modalImage">
+    </div>
+
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        
+        // Get all project images
+        document.querySelectorAll('.project-images img').forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+            });
+        });
+
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    </script>
+</body>
+</html> 
