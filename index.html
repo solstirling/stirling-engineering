@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Entry Box</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'ITC Magnifico Daytime';
+            src: url('Magnifico Daytime Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            background-color: #00687b;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        .nav {
+            width: 100%;
+            padding: 15px 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+        input {
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid white;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .big-s {
+            color: white;
+            font-size: 12em;
+            font-family: 'ITC Magnifico Daytime', sans-serif;
+            margin: 0;
+            line-height: 0.8;
+            animation: slideInFromLeft 1.5s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        h1 {
+            color: white;
+            font-size: 3.5em;
+            margin: 0;
+            padding-top: 20px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            animation: slideInFromLeft 1.5s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            animation-delay: 0.3s;
+            margin-bottom: 10px;
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 15px 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: 2px solid white;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+
+        .project-link::after {
+            content: ' →';
+            opacity: 0;
+            margin-left: -10px;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover::after {
+            opacity: 1;
+            margin-left: 10px;
+        }
+
+        .project-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .project-link:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <div class="container">
+            <div class="big-s">S</div>
+            <h1>STIRLING ENGINEERING</h1>
+            <a href="projects.html" class="project-link">VIEW PROJECTS</a>
+        </div>
+    </div>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+</body>
+</html> 
