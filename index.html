@@ -70,7 +70,7 @@
             font-family: 'ITC Magnifico Daytime', sans-serif;
             margin: 0;
             line-height: 0.8;
-            animation: slideInFromLeft 1.5s ease-out;
+            animation: slideInFromRight 1.5s ease-out;
             opacity: 0;
             animation-fill-mode: forwards;
         }
@@ -92,6 +92,17 @@
             0% {
                 opacity: 0;
                 transform: translateX(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
             }
             100% {
                 opacity: 1;
@@ -203,8 +214,8 @@
     <nav class="nav">
         <ul>
             <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT US</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="coming-soon.html">ABOUT ME</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
             <li><a href="projects.html">PROJECTS</a></li>
         </ul>
     </nav>
